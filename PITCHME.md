@@ -61,3 +61,24 @@ Assertion example
 
 * Възможно е да дефинираме функция която се вика в края на компилацията на модула
 * Spec runner example
+
+
+TODO:
+
+## Generating Functions from External Data
+
+### Generation from external file - 5 min
+
+### @external_resource
+
+### Generation from a remote API - 5 min
+
+### Macro.escape - 5 min
+
+### Generating code by walking the AST - 10 min
+
+Macro.prewalk && Macro.postwalk
+
+### Testing macros - 20 min
+
+## Implementing an HTML DSL - probably 1 hour
