@@ -62,23 +62,39 @@ Assertion example
 * Възможно е да дефинираме функция която се вика в края на компилацията на модула
 * Spec runner example
 
+#HSLIDE
 
-TODO:
+### Генериране на функции от външен файл
 
-## Generating Functions from External Data
+Timezones example
 
-### Generation from external file - 5 min
+#HSLIDE
 
-### @external_resource
+### Генериране на функции от външен URL
 
-### Generation from a remote API - 5 min
+Timezone example from a GIST
 
-### Macro.escape - 5 min
+#HSLIDE
 
 ### Generating code by walking the AST - 10 min
 
 Macro.prewalk && Macro.postwalk
 
-### Testing macros - 20 min
+#HSLIDE
+
+### Testing
+
+* Тествайте генерираният код, не генерирането на код
+* a.k.a. integration testing
+* Тестването на генерираният AST и междинните стъпки е много трудно
+* Пример със timezones
+
+#HSLIDE
+
+### Unit Testing
+
+* Тестване на самото AST трябва да се прави само при много специални случаи
+* Macro.to_string - връща кода на дадено AST
+* Така можем да тестваме с най-просто равенство
 
 ## Implementing an HTML DSL - probably 1 hour
