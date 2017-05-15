@@ -76,12 +76,6 @@ Timezone example from a GIST
 
 #HSLIDE
 
-### Generating code by walking the AST - 10 min
-
-Macro.prewalk && Macro.postwalk
-
-#HSLIDE
-
 ### Testing
 
 * Тествайте генерираният код, не генерирането на код
@@ -94,6 +88,14 @@ Macro.prewalk && Macro.postwalk
 ### Да имплементираме HTML DSL
 
 Имплементация чрез IO.puts
+
+#HSLIDE
+
+### Macro.prewalk && Macro.postwalk
+
+* Можем да имплементираме горният пример чрез обхождане на AST-то
+* Така можем да намалим количеството код, което генерираме
+* За сметка на това трябва да работим на много по-ниско ниво
 
 #HSLIDE
 
