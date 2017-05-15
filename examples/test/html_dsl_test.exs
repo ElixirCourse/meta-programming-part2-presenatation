@@ -3,8 +3,16 @@ defmodule HtmlDslTest do
 
   require HtmlDsl
 
+  defp generate_ast do
+    HtmlDsl.generate_tag(:head) do
+      quote do
+        HtmlDsl.text("test")
+      end
+    end
+  end
+
   test "assert generates proper code when the two sides are equal" do
-    assert Macro.to_string(HtmlDsl.generate_tag(:head, do: quote(do: HtmlDsl.text("test")))) == String.strip(~S"""
+    assert Macro.to_string(generate_ast()) == String.strip(~S"""
     (
       output("<#{:head}>")
       HtmlDsl.text("test")

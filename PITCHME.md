@@ -23,11 +23,10 @@ end
 ```elixir
 defmodule Cond do
   defmacro __using__(_options) do
-    import Kernel, except: [unless: 2]
-    import unquote(__MODULE__), only: [unless: 2]
+    import unquote(__MODULE__), only: [fmi_unless: 2]
   end
 
-  defmacro unless(expr, do: block) do
+  defmacro fmi_unless(expr, do: block) do
     quote do
       if !unquote(expr), do: unquote(block)
     end
@@ -42,7 +41,7 @@ defmodule TestUnless do
   use Cond
 
   def test do
-    unless File.exists?("test.txt") do
+    fmi_unless File.exists?("test.txt") do
       File.write("test.txt", DateTime.utc_now |> DateTime.to_string)
     end
   end
@@ -91,14 +90,6 @@ Timezone example from a GIST
 
 #HSLIDE
 
-### Macro.prewalk && Macro.postwalk
-
-* Можем да имплементираме горният пример чрез обхождане на AST-то
-* Така можем да намалим количеството код, което генерираме
-* За сметка на това трябва да работим на много по-ниско ниво
-
-#HSLIDE
-
 ### Unit Testing
 
 * Тестване на самото AST трябва да се прави само при много специални случаи
@@ -111,3 +102,11 @@ Timezone example from a GIST
 ### Да имплементираме HTML DSL
 
 Имплементация чрез агент
+
+#HSLIDE
+
+### Macro.prewalk && Macro.postwalk
+
+* Можем да имплементираме горният пример чрез обхождане на AST-то
+* Така можем да намалим количеството код, което генерираме
+* За сметка на това трябва да работим на много по-ниско ниво
