@@ -13,8 +13,6 @@ defmodule Specs do
     quote do
       @specs {unquote(func_name), unquote(description)}
       def unquote(func_name)(), do: unquote(spec_block)
-
-      IO.inspect("Current specs: #{inspect(@specs)}")
     end
   end
 end
