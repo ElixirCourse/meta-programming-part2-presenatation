@@ -15,16 +15,17 @@ defmodule Specs do
       def unquote(func_name)(), do: unquote(spec_block)
     end
   end
+
 end
 
 defmodule TestSpecs do
   use Specs
 
-  spec "Test truth" do
-    assert true == true
+  spec "Test success" do
+    assert 1 == 1
   end
 
   spec "Test failure" do
-    assert false == true
+    assert 1 == 2
   end
 end
