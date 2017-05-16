@@ -27,12 +27,12 @@ defmodule HtmlDslAgentWalk do
   end
 
   def postwalk({tag_name, _meta, [[do: block]]}) when tag_name in @tags do
-    generate_tag(tag_name, do: block)
+    tag(tag_name, do: block)
   end
 
   def postwalk(ast), do: ast
 
-  def generate_tag(tag_name, do: inner) do
+  def tag(tag_name, do: inner) do
     quote do
       output(var!(buffer, HtmlDslAgentWalk), "<#{unquote(tag_name)}>")
       unquote(inner)

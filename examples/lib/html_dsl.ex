@@ -6,7 +6,7 @@ defmodule HtmlDsl do
 
   for tag_name <- @tags do
     defmacro unquote(tag_name)(do: block) do
-      generate_tag(unquote(tag_name), do: block)
+      tag(unquote(tag_name), do: block)
     end
   end
 
@@ -16,7 +16,7 @@ defmodule HtmlDsl do
     end
   end
 
-  def generate_tag(tag_name, do: inner) do
+  def tag(tag_name, do: inner) do
     quote do
       output "<#{unquote(tag_name)}>"
       unquote(inner)

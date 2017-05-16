@@ -4,7 +4,7 @@ defmodule HtmlDslTest do
   require HtmlDsl
 
   defp generate_ast do
-    HtmlDsl.generate_tag(:head) do
+    HtmlDsl.tag(:head) do
       quote do
         HtmlDsl.text("test")
       end
